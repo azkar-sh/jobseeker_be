@@ -62,7 +62,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       mysql.query(
         "SELECT * FROM t_candidate WHERE email = ?",
-        email,
+        [email],
         (err, result) => {
           if (err) {
             reject(err);
@@ -76,7 +76,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       mysql.query(
         "SELECT * FROM t_candidate WHERE phone_number = ?",
-        phone,
+        [phone],
         (err, result) => {
           if (err) {
             reject(err);
